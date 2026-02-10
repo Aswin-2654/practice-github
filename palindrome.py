@@ -1,0 +1,21 @@
+def is_palindrome_slicing(text):
+  """
+  Checks if a string (or number converted to string) is a palindrome using slicing.
+  """
+  # Comparing the string with its reversed version
+  return text == text[::-1]
+
+# Example Usage:
+word = "madam"
+number = 121
+sentence = "A man, a plan, a canal, Panama"
+
+print(f"'{word}' is palindrome: {is_palindrome_slicing(word)}")
+print(f"'{number}' is palindrome: {is_palindrome_slicing(str(number))}")
+
+# For sentences, you may need to preprocess the string (remove spaces/punctuation, lowercase)
+def clean_and_check(sentence):
+    cleaned_text = ''.join(char.lower() for char in sentence if char.isalnum())
+    return cleaned_text == cleaned_text[::-1]
+
+print(f"'{sentence}' is palindrome (cleaned): {clean_and_check(sentence)}")
